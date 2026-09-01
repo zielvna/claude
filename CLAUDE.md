@@ -8,11 +8,6 @@ look for the repo's pull request template — `pull_request_template.md`
 branch/commit/title conventions it documents, and use it as the PR body when
 opening a PR.
 
-If no template is found, use these defaults:
-
-- Branch: `<snake_case_description>`
-- Commit / PR title: Conventional Commits — `<type>: <summary>`
-
 Only create branches, commits, or PRs when explicitly asked. If you are
 missing anything they require, ask before proceeding — do not guess.
 
@@ -22,6 +17,29 @@ report your work.
 
 Before pushing, read the CI workflow files to find the exact scripts the
 checks invoke, and run the ones covering your changed files locally.
+
+## Defaults
+
+Fall back to these, item by item, for anything the repo doesn't already
+document its own convention for:
+
+- Branch: `<snake_case_description>`
+- Commit / PR title: Conventional Commits — `<type>: <summary>`
+- Commit body: none — the title alone
+- PR body: exactly these sections, in this order, and nothing else:
+
+## Summary
+
+<one paragraph on why the change is needed>
+
+## Changes
+
+- <one bullet per change, no trailing period>
+
+## Notes
+
+- <only if something can break after merge, and what to do about it; omit the
+  section otherwise>
 
 ## Conditional class names
 

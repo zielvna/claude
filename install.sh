@@ -12,7 +12,9 @@ fi
  
 for skill in "$REPO"/skills/*/; do
   [ -d "$skill" ] || continue
-  ln -sfn "${skill%/}" "$CLAUDE/skills/$(basename "$skill")"
+  target="$CLAUDE/skills/$(basename "$skill")"
+  [ -L "$target" ] || rm -rf "$target"
+  ln -sfn "${skill%/}" "$target"
 done
  
 for file in "$REPO"/commands/*.md; do
