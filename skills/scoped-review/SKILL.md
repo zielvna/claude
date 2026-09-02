@@ -1,6 +1,6 @@
 ---
 name: scoped-review
-description: Reviews a specified set of code changes and reports findings ranked by severity, or re-checks a previous report against the current code. Use for any request to review or re-check code, always through this skill rather than directly, passing the previous report verbatim in the invocation when re-checking.
+description: Reviews a specified set of code changes and reports findings ranked by severity, or re-checks a previous report against the current code. Use for any request to review or re-check code, always through this skill rather than directly, passing the previous report verbatim in the invocation when re-checking and printing the returned report unchanged.
 context: fork
 background: false
 ---
@@ -56,4 +56,4 @@ If there are no findings, output exactly one line — `No findings`.
 
 ## 6. Re-check
 
-A previous report may be included in the invocation. When it is, it is the baseline: re-output the full list with the same findings, numbers, and order, reproducing each finding's text exactly and rewriting only what the code changed. Update each existing `<STATUS>`: ✅ if the code now addresses it, ⏭️ if the caller dismissed it, otherwise ❌. Append any newly introduced findings after the existing ones, continuing the numbering.
+A previous report may be included in the invocation. When it is, it is the baseline: re-output the full list with the same findings, numbers, and order, reproducing each finding's `<FINDING>` and `<FIX>` text verbatim. Update only `<LOCATION>` — re-anchored to the line it now points at — and `<STATUS>`: ✅ if the code now addresses it, ⏭️ if the caller dismissed it, otherwise ❌. Append any newly introduced findings after the existing ones, continuing the numbering.
