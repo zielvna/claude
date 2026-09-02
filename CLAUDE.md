@@ -15,6 +15,9 @@ Never silently drop a required section or field you can't fill. Keep it
 and leave a `TODO: <what is needed>` placeholder, then call it out when you
 report your work.
 
+Never add a `Claude-Session:` trailer or a `Co-Authored-By` line to a
+commit body.
+
 Before pushing, read the CI workflow files to find the exact scripts the
 checks invoke, and run the ones covering your changed files locally.
 
