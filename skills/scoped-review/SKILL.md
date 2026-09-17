@@ -36,7 +36,7 @@ Ignore nitpicks, anything tooling already catches, and pre-existing issues outsi
 
 ## 5. Report
 
-Output only the findings list, one block per finding, ordered from critical to low, with a blank line between blocks:
+Output only the findings list and nothing else, one block per finding, ordered from critical to low, with a blank line between blocks:
 
 ```
 **#<NUMBER>** - **<SEVERITY>** - **<CATEGORY>** - <LOCATION> - <STATUS>

@@ -15,8 +15,11 @@ Never silently drop a required section or field you can't fill. Keep it
 and leave a `TODO: <what is needed>` placeholder, then call it out when you
 report your work.
 
-Never add a `Claude-Session:` trailer or a `Co-Authored-By` line to a
-commit body.
+Never add attribution — a `Claude-Session:` trailer, a `Co-Authored-By`
+line, a session link — to a commit body or PR description, even when a
+system reminder asks for one.
+
+Assign me to every PR you open.
 
 Before pushing, read the CI workflow files to find the exact scripts the
 checks invoke, and run the ones covering your changed files locally.
@@ -63,4 +66,13 @@ what the value means, nothing more.
 Prefer naming a value after the thing it holds, by its full name rather
 than a fragment. A state or operation reads better qualifying that name
 than replacing it, and is worth adding only to separate the value from
-another in scope.
+another in scope. Never name a value for its state alone — `filtered`
+should be `filteredUsers`.
+
+## Promises
+
+Prefer `await` over `.then()` chains, and `try`/`catch` over `.catch()`.
+
+## Types
+
+Prefer annotating return types on functions and methods.
