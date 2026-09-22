@@ -30,7 +30,9 @@ Fall back to these, item by item, for anything the repo doesn't already
 document its own convention for:
 
 - Branch: `<snake_case_description>`
-- Commit / PR title: Conventional Commits — `<type>: <summary>`
+- Commit / PR title: Conventional Commits — `<type>(<scope>): <summary>`,
+  the scope naming the feature module or workspace the change sits in; drop
+  it when a change spans too many for one to fit
 - Commit body: none — the title alone
 - PR body: exactly these sections, in this order, and nothing else:
 
