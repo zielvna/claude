@@ -7,15 +7,6 @@ description: NestJS coding practices and conventions to follow when writing or c
 
 Practices to follow when doing NestJS work in this project.
 
-## Follow the project first
-
-These are defaults, not rules. Where the project already has an established
-pattern — one that recurs, not a single occurrence — use it. Apply a practice
-below only when the project has no clear answer.
-
-Look properly before concluding there is none — read the surrounding files
-and search the wider codebase for how the same case is handled elsewhere.
-
 ## Fail when nothing was affected
 
 A write that matches no rows is an error, not a no-op. Throw instead of

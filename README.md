@@ -15,8 +15,6 @@ git clone https://github.com/zielvna/claude.git
 Run the install script:
 
 ```bash
-cd ~/code/claude
-chmod +x install.sh
 ./install.sh
 ```
 

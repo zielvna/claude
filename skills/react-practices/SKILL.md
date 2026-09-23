@@ -7,11 +7,8 @@ description: React coding practices and conventions to follow when writing or ch
 
 Practices to follow when doing React work in this project.
 
-## Follow the project first
+## Conditional class names
 
-These are defaults, not rules. Where the project already has an established
-pattern — one that recurs, not a single occurrence — use it. Apply a practice
-below only when the project has no clear answer.
-
-Look properly before concluding there is none — read the surrounding files
-and search the wider codebase for how the same case is handled elsewhere.
+If the project already uses a class-name utility (e.g. `classnames`/`cx`,
+`clsx`), prefer it over template literals and ternaries for conditional
+or composed class names, matching how the project imports and uses it.

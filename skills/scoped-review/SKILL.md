@@ -1,6 +1,7 @@
 ---
 name: scoped-review
-description: Reviews a specified set of code changes and reports findings ranked by severity, or re-checks a previous report against the current code. Use for any request to review or re-check code, always through this skill rather than directly, passing the previous report verbatim in the invocation when re-checking and printing the returned report unchanged.
+description: Reviews a specified set of code changes and reports findings ranked by severity, or re-checks a previous report against the current code. Use for any request to review code or re-check a previous review's report, always through this skill rather than directly, passing the previous report verbatim in the invocation when re-checking and printing the returned report unchanged.
+argument-hint: "[changes to review]"
 context: fork
 background: false
 ---
@@ -10,6 +11,8 @@ background: false
 Review a set of code changes and report findings ranked by severity.
 
 ## 1. Resolve the scope
+
+Requested: $ARGUMENTS
 
 Resolve the caller's requested changes to a concrete diff.
 

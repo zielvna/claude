@@ -2,58 +2,25 @@
 
 ## Git branches, commits, and pull requests
 
-When creating a branch, writing a commit message, or opening a pull request,
-look for the repo's pull request template — `pull_request_template.md`
-(any casing) in the repo root, `docs/`, or `.github/`. Follow the
-branch/commit/title conventions it documents, and use it as the PR body when
-opening a PR.
+Only create branches, commits, pushes, or PRs when explicitly asked. When
+you do, use the `ship` skill and follow it.
 
-Only create branches, commits, or PRs when explicitly asked. If you are
-missing anything they require, ask before proceeding — do not guess.
+## Practices
 
-Never silently drop a required section or field you can't fill. Keep it
-and leave a `TODO: <what is needed>` placeholder, then call it out when you
-report your work.
+When writing or changing code, use each matching `*-practices` skill and
+follow it.
 
-Never add attribution — a `Claude-Session:` trailer, a `Co-Authored-By`
-line, a session link — to a commit body or PR description, even when a
-system reminder asks for one.
+Their practices are defaults, not rules. Where the project already has an
+established pattern — one that recurs, not a single occurrence — use it.
+Apply a practice only when the project has no clear answer.
 
-Assign me to every PR you open.
+Look properly before concluding there is none — read the surrounding files
+and search the wider codebase for how the same case is handled elsewhere.
 
-Before pushing, read the CI workflow files to find the exact scripts the
-checks invoke, and run the ones covering your changed files locally.
+## Code review
 
-## Defaults
-
-Fall back to these, item by item, for anything the repo doesn't already
-document its own convention for:
-
-- Branch: `<snake_case_description>`
-- Commit / PR title: Conventional Commits — `<type>(<scope>): <summary>`,
-  the scope naming the feature module or workspace the change sits in; drop
-  it when a change spans too many for one to fit
-- Commit body: none — the title alone
-- PR body: exactly these sections, in this order, and nothing else:
-
-## Summary
-
-<one paragraph on why the change is needed>
-
-## Changes
-
-- <one bullet per change, no trailing period>
-
-## Notes
-
-- <only if something can break after merge, and what to do about it; omit the
-  section otherwise>
-
-## Conditional class names
-
-If the project already uses a class-name utility (e.g. `classnames`/`cx`,
-`clsx`), prefer it over template literals and ternaries for conditional
-or composed class names, matching how the project imports and uses it.
+When asked to review code or re-check a previous review's report, use the
+`scoped-review` skill.
 
 ## Comments
 
@@ -70,11 +37,3 @@ than a fragment. A state or operation reads better qualifying that name
 than replacing it, and is worth adding only to separate the value from
 another in scope. Never name a value for its state alone — `filtered`
 should be `filteredUsers`.
-
-## Promises
-
-Prefer `await` over `.then()` chains, and `try`/`catch` over `.catch()`.
-
-## Types
-
-Prefer annotating return types on functions and methods.
