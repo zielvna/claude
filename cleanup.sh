@@ -33,6 +33,7 @@ PATHS=(
   "$CLAUDE/plugins/store"
   "$CLAUDE/plugins/synced"
   "$CLAUDE/skills/synced"
+  "$CLAUDE/skills/.trash"
   "$HOME/.cache/claude"
   "$HOME/Library/Caches/claude-cli-nodejs"
 )
