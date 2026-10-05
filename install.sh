@@ -16,6 +16,10 @@ MCPS=(
   "next-devtools npx next-devtools-mcp@latest"
 )
 
+SKILLS=(
+  "vercel-labs/agent-skills vercel-react-best-practices"
+)
+
 add_plugin() {
   claude plugin install "$1"
 }
@@ -24,6 +28,10 @@ add_mcp() {
   local name="$1"
   shift
   claude mcp get "$name" >/dev/null 2>&1 || claude mcp add --scope user "$name" -- "$@"
+}
+
+add_skill() {
+  npx -y skills add "$1" --skill "$2" --global --agent claude-code cursor --yes
 }
 
 mkdir -p "$CLAUDE/skills" "$CLAUDE/commands" "$CLAUDE/agents"
@@ -56,3 +64,12 @@ done
 for mcp in "${MCPS[@]}"; do
   add_mcp $mcp
 done
+
+for skill in "${SKILLS[@]}"; do
+  add_skill $skill
+done
+
+if [ -f "$REPO/settings.json" ]; then
+  jq -s '.[0] * .[1]' "$CLAUDE/settings.json" "$REPO/settings.json" > "$CLAUDE/settings.json.tmp"
+  mv "$CLAUDE/settings.json.tmp" "$CLAUDE/settings.json"
+fi
