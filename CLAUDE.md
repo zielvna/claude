@@ -17,11 +17,6 @@ Apply a practice only when the project has no clear answer.
 Look properly before concluding there is none — read the surrounding files
 and search the wider codebase for how the same case is handled elsewhere.
 
-## Code review
-
-When asked to review code or re-check a previous review's report, use the
-`scoped-review` skill.
-
 ## Comments
 
 Do not write comments. Prefer clear names and code that explains itself.
