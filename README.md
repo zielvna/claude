@@ -60,3 +60,13 @@ Run the install script:
 It links the skills, agents and CLAUDE.md into `~/.claude`, installs the plugins, MCP servers and skills.sh skills listed in `install.sh`, then merges `settings.json` into your settings. It needs `jq` and Node.js. Re-running it is safe.
 
 Then start Claude Code and run `/context` to confirm everything loaded.
+
+## Cleanup 🧹
+
+Quit Claude Code and run the cleanup script:
+
+```bash
+./cleanup.sh
+```
+
+It deletes Claude Code sessions, project data, caches, logs and backups, and keeps your rules, settings, skills, agents, commands, plugins and MCP servers.
