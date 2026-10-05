@@ -18,4 +18,6 @@ Run the install script:
 ./install.sh
 ```
 
+It links the skills, agents and CLAUDE.md into `~/.claude`, then installs the plugins and MCP servers listed in `install.sh`. The MCP servers run through `npx`, so they need Node.js. Re-running it is safe.
+
 Then start Claude Code and run `/context` to confirm everything loaded.
