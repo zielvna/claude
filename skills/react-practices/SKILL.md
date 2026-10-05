@@ -12,3 +12,8 @@ Practices to follow when doing React work in this project.
 If the project already uses a class-name utility (e.g. `classnames`/`cx`,
 `clsx`), prefer it over template literals and ternaries for conditional
 or composed class names, matching how the project imports and uses it.
+
+## One component per file
+
+Define each component in its own file. Do not declare another component,
+or a function that returns JSX, next to it.

@@ -37,3 +37,13 @@ than a fragment. A state or operation reads better qualifying that name
 than replacing it, and is worth adding only to separate the value from
 another in scope. Never name a value for its state alone — `filtered`
 should be `filteredUsers`.
+
+## Characters
+
+Use plain ASCII characters in code, comments and strings: `*` instead of
+`×`, `-` instead of `–`. Do not introduce typographic symbols.
+
+## Browser
+
+Use the `chrome-devtools` MCP tools to inspect the results of your changes
+in the browser.
