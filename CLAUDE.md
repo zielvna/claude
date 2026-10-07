@@ -42,3 +42,9 @@ Use plain ASCII characters in code, comments and strings: `*` instead of
 
 Use the `chrome-devtools` MCP tools to inspect the results of your changes
 in the browser.
+
+## Design propositions
+
+Build design propositions and mockups with the project's own components,
+styles and assets, using mock data, and show them in the browser. Use
+artifacts only when explicitly asked.
