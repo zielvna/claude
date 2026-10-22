@@ -33,6 +33,10 @@ than replacing it, and is worth adding only to separate the value from
 another in scope. Never name a value for its state alone — `filtered`
 should be `filteredUsers`.
 
+## English
+
+Write all English in Simplified Technical English (ASD-STE100).
+
 ## Characters
 
 Use plain ASCII characters in code, comments and strings: `*` instead of

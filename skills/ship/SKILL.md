@@ -58,6 +58,9 @@ without switching.
 
 Before pushing, run the CI checks covering your changed files locally.
 
+After you push to a branch that has an open PR, read the PR body. If it no
+longer describes all the changes, update it.
+
 ## Defaults
 
 Fall back to these, item by item, for anything the repo doesn't already
