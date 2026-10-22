@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import type { IncomingMessage, ServerResponse } from "node:http";
-import { basename, dirname, join, resolve } from "node:path";
+import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import browserSync from "browser-sync";
 
@@ -15,14 +15,20 @@ if (markdownArguments.length !== 1) {
 
 const markdownPath = resolve(markdownArguments[0]);
 
-async function serveIndex(
+async function serve(
   request: IncomingMessage,
   response: ServerResponse,
   next: () => void,
 ): Promise<void> {
-  if (request.url?.split("?")[0] === "/") {
+  const requestPath = request.url?.split("?")[0];
+  if (requestPath === "/") {
     response.writeHead(200, { "content-type": "text/html; charset=utf-8" });
     response.end(await readFile(join(appDirectory, "index.html")));
+    return;
+  }
+  if (requestPath === "/markdown") {
+    response.writeHead(200, { "content-type": "text/markdown; charset=utf-8" });
+    response.end(await readFile(markdownPath));
     return;
   }
   next();
@@ -32,7 +38,7 @@ browserSync.create().init(
   {
     server: {
       baseDir: dirname(markdownPath),
-      middleware: [serveIndex],
+      middleware: [serve],
       routes: { "/app": appDirectory },
       serveStaticOptions: { dotfiles: "ignore" },
     },
@@ -49,8 +55,6 @@ browserSync.create().init(
       console.error(error.message);
       process.exit(1);
     }
-    const port = browserSyncInstance.getOption("port");
-    const markdownName = encodeURIComponent(basename(markdownPath));
-    console.log(`http://localhost:${port}/?file=${markdownName}`);
+    console.log(`http://localhost:${browserSyncInstance.getOption("port")}/`);
   },
 );

@@ -2,11 +2,15 @@ import { transformerColorizedBrackets } from "https://esm.sh/@shikijs/colorized-
 import { marked } from "https://esm.sh/marked@18.1.1";
 import { bundledLanguages, codeToHtml } from "https://esm.sh/shiki@4.5.0";
 
-const article = document.querySelector(".markdown");
-const markdownName = new URLSearchParams(location.search).get("file");
-const response = await fetch(`/${encodeURIComponent(markdownName)}`);
+const article = document.querySelector(".typeset");
+const response = await fetch("/markdown");
 const markdown = await response.text();
 article.innerHTML = marked.parse(markdown);
+
+for (const checkbox of article.querySelectorAll("li input[type=checkbox]")) {
+  checkbox.closest("li").classList.add("task-list-item");
+  checkbox.closest("ul").classList.add("contains-task-list");
+}
 
 for (const codeBlock of article.querySelectorAll("pre code")) {
   const language = codeBlock.className.replace("language-", "");
