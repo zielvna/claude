@@ -18,6 +18,7 @@ This is my personal Claude Code configuration. It holds my global CLAUDE.md rule
 - `ship` - git and pull request conventions
 - `scoped-review` - code review
 - `scoped-recheck` - re-check of the last code review
+- `render-markdown` - live preview of a markdown file in the browser
 
 ### Agents
 

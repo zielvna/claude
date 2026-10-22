@@ -47,6 +47,11 @@ for skill in "$REPO"/skills/*/; do
   ln -sfn "${skill%/}" "$target"
 done
  
+for package in "$REPO"/skills/*/package.json; do
+  [ -f "$package" ] || continue
+  npm ci --prefix "$(dirname "$package")" --omit=dev --no-audit --no-fund
+done
+ 
 for file in "$REPO"/commands/*.md; do
   [ -f "$file" ] || continue
   ln -sfn "$file" "$CLAUDE/commands/$(basename "$file")"
