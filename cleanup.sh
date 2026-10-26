@@ -38,10 +38,9 @@ PATHS=(
   "$HOME/Library/Caches/claude-cli-nodejs"
 )
 
-echo "This deletes Claude Code sessions, project data, caches, logs and backups."
-echo "Quit Claude Code before continuing."
-read -r -p "Continue? [y/N] " answer
-[ "$answer" = "y" ] || exit 1
+echo "Claude Code data will be deleted."
+read -r -p "Do you want to continue? [y/N] " answer
+[[ $answer == [yY] ]] || { echo "Abort."; exit 1; }
 
 for path in "${PATHS[@]}"; do
   rm -rf "$path"
