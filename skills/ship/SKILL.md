@@ -17,8 +17,8 @@ allowed-tools: Bash(git status:*), Bash(git log:*), Bash(git for-each-ref:*)
 
 Requested: $ARGUMENTS
 
-Do only what was asked — `commit` stops after the commit, `push` after the
-push, `pr` once the PR is open.
+Do only what was asked — do not go on to the next step, e.g. open a PR
+after a push.
 
 ## Conventions
 
@@ -58,8 +58,8 @@ without switching.
 
 Before pushing, run the CI checks covering your changed files locally.
 
-After you push to a branch that has an open PR, read the PR body. If it no
-longer describes all the changes, update it.
+After each push to a branch with an open PR, read the PR body. If it is no
+longer up to date, update it. Keep the format of the current body.
 
 ## Defaults
 

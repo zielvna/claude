@@ -7,8 +7,8 @@ you do, use the `ship` skill and follow it.
 
 ## Practices
 
-When writing or changing code, use each matching `*-practices` skill and
-follow it.
+Before you write or change code, use every available skill whose
+description says to use it for that kind of code, and follow them.
 
 Their practices are defaults, not rules. Where the project already has an
 established pattern — one that recurs, not a single occurrence — use it.
